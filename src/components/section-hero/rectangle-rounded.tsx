@@ -1,46 +1,86 @@
+"use client"
+
 import Image from "next/image"
-import locationIcon from "/public/location-icon.svg"
-import phoneIcon from "/public/phone-call.svg"
-import mail from "/public/mail.svg"
+import { RECTANGLE_HERO } from "@/constants"
+import { useState } from "react"
+import arrowRight from "/public/arrow-circle-right.svg"
+import arrowLeft from "/public/arrow-circle-left.svg"
+
+
+
 export const RectangleRounded = () => {
+    let [translate, setTranslate] = useState(0)
+    let translateString;
+
+    const nextSlide = () => {
+        if (translate < 300) {
+            setTranslate(translate + 100);
+            console.log("Somando")
+            console.log(translate)
+        }
+        translateString = translate.toString()
+    }
+
+    const previousSlide = () => {
+        if (translate > 0) {
+            setTranslate(translate - 100);
+            console.log("Subtraindo")
+            console.log(translate)
+        }
+        translateString = translate.toString()
+    }
     return (
-        <div className="hidden w-full rounded-full radial-gradient py-11 px-10 md:flex justify-between">
-            <div className="flex items-center">
-                <div>
-                    <Image src={locationIcon} alt="Location Icon"
-                    width={50}
-                    height={50}
-                    />
-                </div>
-                <div>
-                    <h2 className="lg:text-2xl text-white font-bold md:text-lg">Pay Us a Visit</h2>
-                    <p className="text-xs font-normal text-white">Union St, Seattle, WA 98101, United States</p>
-                </div>
+        <>
+            {/* DESKTOP */}
+            <div className="hidden  w-full rounded-full radial-gradient py-11 px-10 md:flex justify-between">
+                {RECTANGLE_HERO.map((item) => (
+                    <div className="flex gap-4">
+                        <div >
+                            <Image src={item.icon} alt={item.alt}
+                                width={45}
+                                height={45}
+                            />
+                        </div>
+                        <div>
+                            <h2 className="lg:text-2xl text-white font-bold md:text-lg">{item.title}</h2>
+                            <p className="text-sm font-normal text-white">{item.info}</p>
+                        </div>
+                    </div>
+                ))}
             </div>
-            <div className="flex items-center gap-7 w-[250px]">
-                <div>
-                    <Image src={phoneIcon} alt="Location Icon"
-                    width={50}
-                    height={50}
-                    />
+
+            {/* MOBILE */}
+
+            <div className="relative overflow-hidden rounded-full radial-gradient py-5 px-8 md:hidden">
+                <button className="absolute top-8 left-1" onClick={previousSlide}>
+                    <Image src={arrowLeft} alt="" />
+                </button>
+                <div className="w-[400%] flex ">
+                    {RECTANGLE_HERO.map((item, index) => (
+                        <div key={index} className={`flex gap-1 w-[100%] justify-center items-center transition-all duration-200 `}>
+                            <div>
+                                <Image
+                                    src={item.icon}
+                                    alt={item.alt}
+                                    width={45}
+                                    height={45}
+                                />
+                            </div>
+                            <div className="pr-12">
+                                <h2 className="text-sm text-white font-bold">{item.title}</h2>
+                                <p className="text-xs font-normal text-white">{item.info}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-                <div>
-                    <h2 className="lg:text-2xl text-white font-bold md:text-lg">Give Us a Call</h2>
-                    <p className="text-sm font-normal text-white">(110) 1111-1010</p>
-                </div>
+                <button className="absolute top-8 right-1" onClick={nextSlide}>
+                    <Image src={arrowRight} alt="" />
+                </button>
             </div>
-            <div className="flex items-center gap-6">
-                <div>
-                    <Image src={mail} alt="Location Icon"
-                    width={50}
-                    height={50}
-                    />
-                </div>
-                <div>
-                    <h2 className="lg:text-2xl text-white font-bold md:text-lg">Send Us a Message</h2>
-                    <p className="text-sm font-normal text-white">Contact@HydraVTech.com</p>
-                </div>
-            </div>
-        </div>
+
+        </>
+
     )
 }
+
+

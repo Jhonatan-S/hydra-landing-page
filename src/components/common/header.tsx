@@ -9,21 +9,7 @@ import hamburguerButton from "/public/hamburger-button.svg"
 import { useState } from "react";
 import { setDefaultAutoSelectFamilyAttemptTimeout } from "net";
 import GradientButton from "./button-gradient";
-
-// Item da barra de navegação colocado em uma lista para evitar várias tag <li>
-const itemNav = [
-    "About",
-    "Services",
-    "Technologies",
-    "How to"
-]
-// Id da barra de navegação colocado em uma lista para evitar várias tag <li>
-const idSection = [
-    "#about",
-    "#services",
-    "#technologies",
-    "#howto"
-]
+import { ITEM_NAV } from "@/constants";
 
 const classOpenMenu = ""
 const Header = () => {
@@ -46,19 +32,23 @@ const Header = () => {
                     </Link>
 
                 </div>
+
                 {/* MENU DESKTOP */}
                 <nav className="hidden lg:flex items-center">
                     <ul className="flex gap-10">
-                        {itemNav.map((item, index) => <li>
-                            <Link key={index} href={idSection[index]} className="text-white uppercase font-bold text-[0.75rem] hover:text-purple-300">{item}</Link>
-                        </li>)}
+                        {ITEM_NAV.map((item) =>
+                            <Link onClick={toogleMenu} key={item.key} href={item.href} className="text-white text-xs uppercase font-bold hover:text-purple-300">
+                                {item.label}
+                            </Link>
+                        )}
                     </ul>
                 </nav>
 
                 <div className="hidden text-[0.75rem] lg:flex items-center gap-9">
                     <Link href={""} className="uppercase border py-3 px-7 rounded-full text-white">Contact us</Link>
-                    <GradientButton text="Join Hyndra"/>
+                    <GradientButton text="Join Hyndra" />
                 </div>
+
                 {/* MENU MOBILE */}
                 <button onClick={toogleMenu} className={`lg:hidden ${isOpen ? "hidden" : "block"} `}>
                     <Image src={hamburguerButton} alt="Menu Hamburguer icon"
@@ -77,9 +67,7 @@ const Header = () => {
                     </div>
                     <nav className="my-auto">
                         <ul className="flex flex-col items-center gap-10">
-                            {itemNav.map((item, index) => <li>
-                                <Link onClick={toogleMenu} key={index} href={idSection[index]} className="text-black uppercase font-bold text-base hover:text-purple-300">{item}</Link>
-                            </li>)}
+                            {ITEM_NAV.map((item) => <Link onClick={toogleMenu} key={item.key} href={item.href} className="text-black uppercase font-bold text-base hover:text-purple-300">{item.label}</Link>)}
                         </ul>
                     </nav>
                 </div>
