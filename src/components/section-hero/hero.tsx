@@ -11,7 +11,7 @@ import bigArrowRight from "/public/arrow-right-big.svg"
 
 const SectionHero = () => {
     return (
-        <section>
+        <section className="mt-12 md:mt-32">
             <MaxWidthContainer className="flex flex-col gap-20">
                 <div className="flex flex-col gap-[2rem] items-center md:flex-row-reverse justify-between">
                     <div className="flex items-center justify-center w-full md:justify-end lg:w-[50%] lg:justify-end">

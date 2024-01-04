@@ -18,7 +18,7 @@ const Header = () => {
         setisOpen(!isOpen)
     }
     return (
-        <header>
+        <header className="fixed top-0 right-0 left-0 z-10">
             <MaxWidthContainer className="flex justify-between items-center">
                 <div >
                     <Link href={"/"} className="flex gap-4">
