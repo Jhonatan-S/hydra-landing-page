@@ -8,10 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundColor: {
+      colors: {
         'primary-color': '#302C42',
-        "gradient-from-to":"#8176AF",
-        "gradient-to":"#C0B7E8"
+        "border-color":"rgba(14, 14, 14, 0.32)",
+      
       },
     },
   },

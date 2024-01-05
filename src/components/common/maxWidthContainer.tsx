@@ -8,7 +8,7 @@ interface MaxWidthContainerProps {
 
  const MaxWidthContainer = ({ className, children }: MaxWidthContainerProps) => {
 
-    const defaultClass = "mx-auto w-full py-6 px-4 w-full lg:w-[1272px]"
+    const defaultClass = "mx-auto w-full py-6 px-4 w-full md:max-w-[1272px]"
     const classMerge = twMerge(defaultClass, className)
 
     return (

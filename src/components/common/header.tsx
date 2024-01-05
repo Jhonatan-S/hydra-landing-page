@@ -7,9 +7,9 @@ import MaxWidthContainer from "./maxWidthContainer";
 import Link from "next/link";
 import hamburguerButton from "/public/hamburger-button.svg"
 import { useState } from "react";
-import { setDefaultAutoSelectFamilyAttemptTimeout } from "net";
 import GradientButton from "./button-gradient";
 import { ITEM_NAV } from "@/constants";
+
 
 const classOpenMenu = ""
 const Header = () => {
@@ -65,10 +65,14 @@ const Header = () => {
                             <span className="text-white text-4xl sm:text-5xl">X</span>
                         </button>
                     </div>
-                    <nav className="my-auto">
+                    <nav className="my-auto flex flex-col gap-10">
                         <ul className="flex flex-col items-center gap-10">
                             {ITEM_NAV.map((item) => <Link onClick={toogleMenu} key={item.key} href={item.href} className="text-black uppercase font-bold text-base hover:text-purple-300">{item.label}</Link>)}
                         </ul>
+                        <div className=" text-[0.75rem] flex flex-col items-center gap-9">
+                            <Link href={""} className="uppercase border py-3 px-7 rounded-full text-white">Contact us</Link>
+                            <GradientButton text="Join Hyndra" />
+                        </div>
                     </nav>
                 </div>
             </MaxWidthContainer>

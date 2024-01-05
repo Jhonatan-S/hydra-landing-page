@@ -1,4 +1,5 @@
 import { twMerge } from "tailwind-merge"
+import Link from "next/link"
 
 interface GradientButtonProps {
     text: string
@@ -7,12 +8,12 @@ interface GradientButtonProps {
 
  const GradientButton = ({text, href}: GradientButtonProps) => {
 
-    const classDefault = "uppercase py-3 px-7 text-sm linear-gradient rounded-full font-bold"
+    const classDefault = "uppercase py-3 px-7 text-xs linear-gradient rounded-full font-bold"
 
     return (
-        <div>
-            <a href={href} className={classDefault}>{text}</a>
-        </div>
+        <button>
+            <Link href={`${href}`} className={classDefault}>{text}</Link>
+        </button>
     )
 }
 export default GradientButton

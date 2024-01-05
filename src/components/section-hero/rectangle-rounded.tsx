@@ -9,13 +9,13 @@ import arrowLeft from "/public/arrow-circle-left.svg"
 import locationIcon from "/public/location-icon.svg"
 
 
-
+// THIS COMPONENT IS THE RECTANGLE CONTAINER WITH LOCATION, PHONE NUMBER AND EMAIL ADRESSS
 export const RectangleRounded = () => {
 
     return (
         <>
             {/* DESKTOP */}
-            <div className="hidden  w-full rounded-full radial-gradient py-11 px-10 md:flex justify-between">
+            <div className="hidden  w-full rounded-full radial-gradient py-11 px-10 lg:flex justify-between">
                 {RECTANGLE_HERO.map((item) => (
                     <div className="flex gap-4">
                         <div >
@@ -34,8 +34,10 @@ export const RectangleRounded = () => {
 
             {/* MOBILE */}
 
-            <div className="flex items-center justify-center gap-2 w-full rounded-full max-w-[500px] mx-auto radial-gradient py-5 px-8 relative md:hidden">
-                <Image src={arrowLeft} alt="Arrow Left " className="absolute t-5 left-1" />
+            <div className="flex items-center justify-center gap-2 w-full rounded-full max-w-[500px] mx-auto radial-gradient py-5 px-8 relative lg:hidden">
+                <button className="flex items-center">
+                    <Image src={arrowLeft} alt="Arrow Left " className="absolute t-5 left-1" />
+                </button>
                 <div >
                     <Image src={locationIcon} alt={"Location Icon"}
                         width={45}
@@ -45,7 +47,9 @@ export const RectangleRounded = () => {
                 <div>
                     <Link href={"#"} className="text-sm font-normal text-white">Union St, Seattle, WA 98101, United States</Link>
                 </div>
-                <Image src={arrowRight} alt="Arrow Left " className="absolute t-5 right-1" />
+                <button className="flex items-center">
+                    <Image src={arrowRight} alt="Arrow Left " className="absolute t-5 right-1" />
+                </button>
             </div>
         </>
 
