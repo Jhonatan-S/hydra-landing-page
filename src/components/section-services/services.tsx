@@ -25,7 +25,7 @@ export const SectionServices = () => {
                 </div>
 
 
-                <div className="flex gap-1 justify-center flex-wrap items-center">
+                <div className="flex gap-3 justify-center flex-wrap items-center">
                     {CARDS_SERVICE.map((item) => <Card
                         image={item.image}
                         alt={item.alt}

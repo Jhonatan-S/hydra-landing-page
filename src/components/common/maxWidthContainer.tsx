@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
+
 interface MaxWidthContainerProps {
     children: ReactNode
     className?: string
@@ -8,12 +9,13 @@ interface MaxWidthContainerProps {
 
  const MaxWidthContainer = ({ className, children }: MaxWidthContainerProps) => {
 
-    const defaultClass = "mx-auto w-full py-6 px-4 w-full md:max-w-[1272px]"
+    const defaultClass = "mx-auto w-full py-6 px-4 w-full md:max-w-max-width"
     const classMerge = twMerge(defaultClass, className)
 
     return (
         <div className={classMerge}>
             {children}
+            
         </div>
     )
 }

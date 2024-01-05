@@ -1,5 +1,6 @@
 import Image from "next/image"
 import GradientButton from "../common/button-gradient"
+import { LineSepareted } from "../common/linde-separeted"
 
 interface CardProps {
     image: string
@@ -18,6 +19,7 @@ export const Card = ({image, title, description, alt, href}: CardProps) => {
             </div>
             <div className="flex flex-col items-center gap-5">
                 <h2 className="uppercase font-bold text-2xl text-white">{title}</h2>
+                <LineSepareted className="w-[10rem]"/>
                 <p className="text-sm text-white">{description}</p>
                 <GradientButton href={href} text="TRY IT NOW" />
             </div>

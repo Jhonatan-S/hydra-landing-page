@@ -13,6 +13,12 @@ const config: Config = {
         "border-color":"rgba(14, 14, 14, 0.32)",
       
       },
+      maxWidth: {
+        "max-width": "80.3rem"
+      },
+      width: {
+        "max-width": "80rem"
+      }
     },
   },
   plugins: [],
