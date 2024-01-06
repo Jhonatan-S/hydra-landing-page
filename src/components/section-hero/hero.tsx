@@ -5,7 +5,7 @@ import { RectangleRounded } from "./rectangle-rounded"
 
 import girlVirtualGlasses from "/public/girl-virtual-glasses.svg"
 import GradientButton from "../common/button-gradient"
-import bigArrowRight from "/public/arrow-right-big.svg"
+// import bigArrowRight from "/public/arrow-right-big.svg"
 
 
 
@@ -27,7 +27,7 @@ const SectionHero = () => {
                             nisl tincidunt eget. Lectus mauris eros in vitae .</p>
                         <div className="flex gap-1 items-center">
                             <GradientButton text="BUILD YOUR WORLD" href="#"></GradientButton>
-                            <Image className="hidden md:block" src={bigArrowRight} alt="Arrow Right"/>
+                            {/* <Image className="hidden md:block" src={bigArrowRight} alt="Arrow Right"/> */}
                         </div>
                     </div>
                 </div>
