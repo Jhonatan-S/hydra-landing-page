@@ -2,12 +2,7 @@ import { CARDS_SERVICE, TEXT_SERVICES } from "@/constants"
 import MaxWidthContainer from "../common/maxWidthContainer"
 import { Card } from "./card"
 
-
 // ASSETS
-
-
-
-
 
 export const SectionServices = () => {
     return (
