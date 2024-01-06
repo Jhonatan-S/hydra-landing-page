@@ -5,7 +5,7 @@ import { RectangleRounded } from "./rectangle-rounded"
 
 import girlVirtualGlasses from "/public/girl-virtual-glasses.svg"
 import GradientButton from "../common/button-gradient"
-import bigArrowRight from "arrow-right-big.svg"
+import bigArrowRight from "/public/arrow-right-big.svg"
 
 
 
