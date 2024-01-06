@@ -15,8 +15,8 @@ export const RectangleRounded = () => {
         <>
             {/* DESKTOP */}
             <div className="hidden  w-full rounded-full radial-gradient py-11 px-10 lg:flex justify-between">
-                {RECTANGLE_HERO.map((item) => (
-                    <div className="flex gap-4">
+                {RECTANGLE_HERO.map((item, index) => (
+                    <div className="flex gap-4" key={index}>
                         <div >
                             <Image src={item.icon} alt={item.alt}
                                 width={45}
