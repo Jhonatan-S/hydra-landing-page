@@ -1,8 +1,7 @@
 import { CARDS_SERVICE, TEXT_SERVICES } from "@/constants"
 import MaxWidthContainer from "../common/maxWidthContainer"
-import Image from "next/image"
-import Link from "next/link"
 import { Card } from "./card"
+
 
 // ASSETS
 

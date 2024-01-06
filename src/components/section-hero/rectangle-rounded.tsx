@@ -3,7 +3,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { RECTANGLE_HERO } from "@/constants"
-import { useState } from "react"
 import arrowRight from "/public/arrow-circle-right.svg"
 import arrowLeft from "/public/arrow-circle-left.svg"
 import locationIcon from "/public/location-icon.svg"
