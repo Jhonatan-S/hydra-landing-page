@@ -5,7 +5,7 @@ import Image from "next/image"
 import { RECTANGLE_HERO } from "@/constants"
 import arrowRight from "/public/arrow-circle-right.svg"
 import arrowLeft from "/public/arrow-circle-left.svg"
-import locationIcon from "public/location-icon.svg"
+import locationIcon from "  /public/location-icon.svg"
 
 
 // THIS COMPONENT IS THE RECTANGLE CONTAINER WITH LOCATION, PHONE NUMBER AND EMAIL ADRESSS
